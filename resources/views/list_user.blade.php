@@ -1,26 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <h1>Daftar Pengguna</h1>
+    <h1 class="text-2xl font-bold mb-4">{{ $title }}</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Kelas</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->nama }}</td>
-                    <td>{{ $user->npm }}</td>
-                    <td>{{ $user->nama_kelas }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <x-table :title="$title" :users="$users" />
 @endsection
