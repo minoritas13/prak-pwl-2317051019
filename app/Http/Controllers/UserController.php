@@ -12,12 +12,14 @@ class UserController extends Controller
     public $userModel;
     public $kelasModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->userModel = new UserModel();
         $this->kelasModel = new Kelas();
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $this->userModel->create([
             'nama' => $request->input('nama'),
             'npm' => $request->input('npm'),
@@ -26,7 +28,8 @@ class UserController extends Controller
         return redirect()->to('/user');
     }
 
-    public function index() {
+    public function index()
+    {
         $data = [
             'title' => 'List User',
             'users' => $this->userModel->getUser(),
@@ -34,7 +37,9 @@ class UserController extends Controller
         return view('list_user', $data);
     }
 
-    public function create() {
+
+    public function create()
+    {
         $kelasModel = new Kelas();
         $kelas = $kelasModel->getKelas();
         $data = [
