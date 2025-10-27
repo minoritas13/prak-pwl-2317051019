@@ -18,7 +18,7 @@
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->nama }}</td>
                         <td>{{ $user->npm }}</td>
-                        <td>{{ $user->nama_kelas ?? '-' }}</td>
+                        <td>{{ $user->kelas->nama_kelas }}</td>
                         <td class="text-center">
                             <a href="{{ route('user.edit', $user->id) }}" class="btn btn-sm btn-warning me-1">Edit</a>
                             <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="d-inline">
