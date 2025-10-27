@@ -9,6 +9,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('user',UserController::class);
+
 Route::get('/profile/{nama}/{npm}/{kelas}', [ProfileController::class, 'profile']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
